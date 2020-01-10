@@ -22,8 +22,8 @@ public class QuickSort2{
 
     private static int partition(Comparable[] arr, int l, int r){
 
-        //int rand = (int)(Math.random() * ( r - l + 1)) + l;
-        //swap(arr, l, rand);
+        int rand = (int)(Math.random() * ( r - l + 1)) + l;
+        swap(arr, l, rand);
 
         Comparable e = arr[l];
         int i = l + 1;
