@@ -4,6 +4,7 @@ package algo;
 public class MaxHeap<Item extends Comparable>{
     private Item[] data;
     private int count;
+    private int capacity;
 
     private void swap(Item[] data, int i, int j){
         Item tempt = data[i];
@@ -23,6 +24,7 @@ public class MaxHeap<Item extends Comparable>{
     public MaxHeap(int capacity){
         data = (Item[])new Comparable[capacity + 1]; //MaxHeap采用从 1 开始索引的方法
         count = 0;
+        this.capacity = capacity;
     }
 
     public int size(){
@@ -34,6 +36,7 @@ public class MaxHeap<Item extends Comparable>{
     }
 
     public void Insert(Item element){
+        assert count < capacity;
         data[++ count] = element;
         ShiftUp(count);
     }
