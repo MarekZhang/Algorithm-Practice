@@ -1,6 +1,6 @@
 package algo;
 
-public class BTS<Key extends Comparable, Value>{
+public class BST<Key extends Comparable, Value>{
 
     private class Node{
         private Key key;
@@ -18,7 +18,7 @@ public class BTS<Key extends Comparable, Value>{
     private Node root;
     private int count;
 
-    public BTS(){
+    public BST(){
         root = null;
         count = 0;
     }
