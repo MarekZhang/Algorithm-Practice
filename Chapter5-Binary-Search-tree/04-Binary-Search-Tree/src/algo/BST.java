@@ -32,8 +32,9 @@ public class BST<Key extends Comparable<Key>, Value>{
         return count == 0;
     }
 
-    public Node insert(Key key, Value value){
-        return insert(root, key, value);
+    public void insert(Key key, Value value){
+        //return insert(root, key, value) 导致根节点就没能成功创建
+        root = insert(root, key, value);
     }
 
 
@@ -61,10 +62,10 @@ public class BST<Key extends Comparable<Key>, Value>{
     private boolean contain(Node node, Key key){
         if(node == null)
             return false;
-        if(node.key.compareTo(key) == 0)
+        if(key.compareTo(node.key) == 0)
             return true;
-        else if(node.key.compareTo(key) < 0)
-            return contain(node.right, key);
+        else if(key.compareTo(node.key) < 0)
+            return contain(node.left, key);
         else // node.key.compareTo(key) >0
             return contain(node.right, key);
 
@@ -85,10 +86,6 @@ public class BST<Key extends Comparable<Key>, Value>{
             return search(node.left, key);
         else  //(key.compareTo(node.key) > 0)
             return search(node.right, key);
-    }
-
-    public static void main(String[] args){
-
     }
 
 }
