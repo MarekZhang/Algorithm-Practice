@@ -1,5 +1,6 @@
 package algo;
 import java.util.*;
+
 public class BST<Key extends Comparable<Key>, Value>{
 
     private class Node{
@@ -42,9 +43,9 @@ public class BST<Key extends Comparable<Key>, Value>{
             return new Node(key, value);
         }
 
-        if(key.CompareTo(node.key) == 0)
+        if(key.compareTo(node.key) == 0)
             node.value = value;
-        else if(key.CompareTo(node.key) < 0)
+        else if(key.compareTo(node.key) < 0)
             node.left = insert(node.left, key, value);
         else //key.CompareTo(node.key) > 0
             node.right = insert(node.right, key, value);
@@ -54,7 +55,7 @@ public class BST<Key extends Comparable<Key>, Value>{
     }
 
     public boolean contain(Key key){
-        return contains(root, key);
+        return contain(root, key);
     }
 
     private boolean contain(Node node, Key key){
@@ -62,9 +63,9 @@ public class BST<Key extends Comparable<Key>, Value>{
         if(node == null)
             return false;
         
-        if(key.CompareTo(node.key) == 0)
+        if(key.compareTo(node.key) == 0)
             return true;
-        else if(key.CompareTo(node.key) < 0)
+        else if(key.compareTo(node.key) < 0)
             return contain(node.left, key);
         else //key.CompareTo(node.key) > 0
             return contain(node.right, key);
@@ -79,9 +80,9 @@ public class BST<Key extends Comparable<Key>, Value>{
         if(node == null)
             return null;
         
-        if(key.CompareTo(node.key) == 0)
+        if(key.compareTo(node.key) == 0)
             return node.value;
-        else if(key.CompareTo(node.key) < 0)
+        else if(key.compareTo(node.key) < 0)
             return search(node.left, key);
         else //key.CompareTo(node.key) > 0
             return search(node.right, key);
@@ -124,6 +125,22 @@ public class BST<Key extends Comparable<Key>, Value>{
             postOrder(node.left);
             postOrder(node.right);
             System.out.println(node.key);
+        }
+    }
+    
+    //层序遍历
+    public void levelOrder(){
+        Queue<Node> queue= new LinkedList<>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            Node node = queue.remove();
+            System.out.println(node.key);
+
+            if(node.left != null)
+                queue.add(node.left);
+            if(node.right != null)
+                queue.add(node.right);
         }
     }
 

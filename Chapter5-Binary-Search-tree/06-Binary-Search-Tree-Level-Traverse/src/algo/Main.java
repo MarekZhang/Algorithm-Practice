@@ -1,4 +1,4 @@
-package algo;
+package bobo.algo;
 
 import java.util.Vector;
 
