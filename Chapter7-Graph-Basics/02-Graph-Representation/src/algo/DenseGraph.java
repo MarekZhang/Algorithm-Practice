@@ -35,7 +35,7 @@ public class DenseGraph{
     public boolean hasEdge(int v, int w){
         assert v >= 0 && v < n;
         assert w >= 0 && w < n;
-        return g[m][n];
+        return g[v][w];
     } 
     
 }
