@@ -1,5 +1,5 @@
 package algo;
-
+import java.util.Vector;
 public class DenseGraph{
 
     // n represents the number of nodes; m represents the number of edges
@@ -37,5 +37,16 @@ public class DenseGraph{
         assert w >= 0 && w < n;
         return g[v][w];
     } 
+
+    public Iterable<Integer> adj(int v){
+        assert v >= 0 && v < n;
+        Vector<Integer> adjList = new Vector<>();
+        for(int i = 0; i < n; i++){
+            if(g[v][i] == true)
+                adjList.add(i);
+        }
+
+        return adjList;
+    }
     
 }
