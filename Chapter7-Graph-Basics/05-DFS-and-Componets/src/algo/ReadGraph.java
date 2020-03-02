@@ -24,7 +24,7 @@ public class ReadGraph{
                 throw new IllegalArgumentException("the number of edges must be nonnegative");
             assert m == graph.E();
 
-            for(int i = 0; i < n; i++){
+            for(int i = 0; i < m; i++){
                 int v = scanner.nextInt();
                 int w = scanner.nextInt();
                 assert v >= 0 && v < n;

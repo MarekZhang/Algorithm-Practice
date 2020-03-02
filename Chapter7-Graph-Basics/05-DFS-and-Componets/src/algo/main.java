@@ -32,5 +32,9 @@ public class main{
         ReadGraph readGraph4 = new ReadGraph(g4, filename);
         System.out.println("test G2 in Dense Graph:");
         g4.show();
+        System.out.println();
+
+        System.out.println("The number of Components for G1 is: " + new Components(g1).count());
+        System.out.println("The number of Components for G3 is: " + new Components(g3).count());
     }
 }
