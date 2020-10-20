@@ -50,7 +50,7 @@ public class MaxHeap<Item extends Comparable>{
 
         for(int i = 0; i < N; i++)
             data[i+1] = arr[i];
-        //从最后一个叶子的父节点开始做Shift Up    
+        //从最后一个叶子的父节点开始做Shift Down    
         for(int i = count / 2; i >= 1; i--)
             ShiftDown(i);
     }
